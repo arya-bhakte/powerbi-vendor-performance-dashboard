@@ -1,118 +1,118 @@
-Vendor Performance Data Analytics
-This project delivers a full-cycle vendor performance analysis for the Retail and Wholesale industry, integrating ETL, statistical analysis, and interactive visualization to optimize inventory, sales, and vendor strategies.
+# Vendor Performance Data Analytics
 
-Objective:
-To maximize profitability by analyzing vendor performance, inventory efficiency, and sales patterns, providing actionable insights for strategic decision-making.
+[![Python](https://img.shields.io/badge/Python-3.11-blue)](https://www.python.org/)
+[![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-yellow)](https://powerbi.microsoft.com/)
+[![SQLite](https://img.shields.io/badge/SQLite-Database-lightgrey)](https://www.sqlite.org/)
 
-Business Problem:
+This project delivers a **full-cycle vendor performance analysis** for the Retail and Wholesale industry, integrating ETL, statistical analysis, and interactive visualization to optimize inventory, sales, and vendor strategies.
 
-Inefficient pricing strategies affecting margins.
+---
 
-Poor inventory turnover leading to capital being tied up.
+## 🎯 Objective
 
-High vendor dependency posing supply risks.
+To maximize profitability by analyzing vendor performance, inventory efficiency, and sales patterns, providing **actionable insights** for strategic decision-making.
 
-Data Sources & Scale:
+---
 
-Multiple CSV files: Purchase, Sales, Vendor Invoice, Inventory.
+## 📝 Business Problem
 
-Sales table: >10 million records.
+- Inefficient pricing strategies affecting margins  
+- Poor inventory turnover leading to capital being tied up  
+- High vendor dependency posing supply risks
 
-Aggregated dataset: 10,692 records ready for analytics and visualization.
+---
 
-Technical Environment & Tools:
+## 📊 Data Sources & Scale
 
-Data Storage & Querying: SQLite and SQL for storing large CSVs, performing complex joins, and optimizing queries.
+- Multiple CSV files: Purchase, Sales, Vendor Invoice, Inventory  
+- Sales table: **>10 million records**  
+- Aggregated dataset: **10,692 records** ready for analytics and visualization
 
-ETL & Scripting: Python (Pandas, SQLAlchemy, OS, Time, Logging) for automated data ingestion, cleaning, transformation, and feature engineering.
+---
 
-Advanced Analysis & Statistics: Python (Matplotlib, Seaborn, SciPy) for exploratory data analysis, outlier detection, correlation analysis, and statistical validation.
+## 🛠 Technical Environment & Tools
 
-Reporting & Visualization: Power BI for creating interactive dashboards, KPIs, custom charts, and actionable business insights.
+**Data Storage & Querying:** SQLite and SQL for storing large CSVs, performing complex joins, and optimizing queries  
 
-Methodology
-1. Data Ingestion (ETL Pipeline)
+**ETL & Scripting:** Python (`Pandas`, `SQLAlchemy`, `OS`, `Time`, `Logging`) for automated data ingestion, cleaning, transformation, and feature engineering  
 
-Database Setup: Imported raw CSV files into SQLite using Python.
+**Advanced Analysis & Statistics:** Python (`Matplotlib`, `Seaborn`, `SciPy`) for exploratory data analysis, outlier detection, correlation analysis, and statistical validation  
 
-Automation & Scripting: Built ingestion_db.py for reusable ETL operations.
+**Reporting & Visualization:** Power BI for creating interactive dashboards, KPIs, custom charts, and actionable business insights  
 
-Logging & Monitoring: Implemented logging to track execution time, errors, and workflow completion.
+**Key Focus:** End-to-end vendor performance analysis, ETL automation, advanced analytics, and interactive dashboard creation
 
-Performance Consideration: Optimized insertion of large datasets (~10M rows) to prevent runtime errors.
+---
 
-2. Data Aggregation & SQL Optimization
+## ⚙️ Methodology
 
-Performed initial EDA using SQL to understand table relationships.
+### 1️⃣ Data Ingestion (ETL Pipeline)
 
-Created aggregated summary tables combining sales, purchase, and invoice data.
+- **Database Setup:** Imported raw CSV files into SQLite using Python  
+- **Automation & Scripting:** Built `ingestion_db.py` for reusable ETL operations  
+- **Logging & Monitoring:** Implemented logging to track execution time, errors, and workflow completion  
+- **Performance Optimization:** Optimized insertion of large datasets (~10M rows) to prevent runtime errors
 
-Optimized joins to reduce query execution from >8 minutes to <1 minute.
+---
 
-Persisted aggregated tables in the database for faster downstream analysis.
+### 2️⃣ Data Aggregation & SQL Optimization
 
-3. Data Cleaning & Feature Engineering
+- Performed initial EDA using SQL to understand table relationships  
+- Created **aggregated summary tables** combining sales, purchase, and invoice data  
+- Optimized joins to reduce query execution from **>8 minutes to <1 minute**  
+- Persisted aggregated tables in the database for faster downstream analysis
 
-Imputed missing values for sales/quantity with zero.
+---
 
-Standardized categorical fields (e.g., vendor names) by trimming whitespace.
+### 3️⃣ Data Cleaning & Feature Engineering
 
-Created key analytical features:
+- Imputed missing values for sales/quantity with zero  
+- Standardized categorical fields (e.g., vendor names) by trimming whitespace  
+- Created key analytical features:  
+  - Gross Profit  
+  - Profit Margin (%)  
+  - Stock Turnover  
+  - Sales-to-Purchase Ratio  
+  - Unsold Inventory Value (capital locked in unsold stock)
 
-Gross Profit
+---
 
-Profit Margin (%)
+### 4️⃣ Advanced Analysis & Statistical Validation
 
-Stock Turnover
+- Conducted detailed EDA using histograms, boxplots, and heatmaps  
+- Correlation analysis revealed relationships between profit margin, sales, and vendor performance  
 
-Sales-to-Purchase Ratio
+**Key Insights:**  
+- 198 brands with low sales but high margins requiring promotional intervention  
+- Top 10 vendors contributing **65.69%** of purchase dollars  
+- Capital locked in unsold inventory: **$2.7M**  
+- Bulk orders reduce unit costs by ~72%, validating bulk pricing strategies  
 
-Unsold Inventory Value (capital locked in unsold stock).
+**Statistical Validation:**  
+- 95% Confidence Intervals for profit margins  
+- T-Test confirming significant difference between top-performing and low-performing vendors
 
-4. Advanced Analysis & Statistical Validation
+---
 
-Conducted detailed EDA on the aggregated dataset using histograms, boxplots, and heatmaps.
+### 5️⃣ Dashboarding & Reporting
 
-Correlation analysis revealed relationships between profit margin, sales, and vendor performance.
+- Developed a **Power BI dashboard** with:  
+  - KPIs: Total Sales, Gross Profit, Unsold Capital  
+  - Donut/Parito Charts: Purchase Contribution by Vendor  
+  - Funnel Charts: Low-turnover vendors  
+  - Scatter Plots: Target brands for sales promotion  
 
-Targeted insights extracted:
+- **DAX Calculations:** Implemented advanced measures and calculated tables within Power BI  
+- Compiled a final report documenting methodology, insights, and **actionable business recommendations**
 
-198 brands with low sales but high margins requiring promotional intervention.
+---
 
-Top 10 vendors contributing 65.69% of purchase dollars.
+## ✅ Key Achievements & Outcomes
 
-Capital locked in unsold inventory quantified at $2.7M.
+- Designed a **full ETL pipeline** capable of handling multi-million row datasets  
+- Created a **fast, optimized aggregated dataset** to streamline analysis  
+- Built an **interactive dashboard** enabling stakeholders to explore vendor performance dynamically  
+- Provided **data-driven recommendations** for inventory and pricing strategies, improving operational decision-making
 
-Bulk orders reduce unit costs by ~72%, validating bulk pricing strategies.
 
-Statistical validation:
 
-95% Confidence Intervals for profit margins.
-
-T-Test confirming significant difference between top-performing and low-performing vendors.
-
-5. Dashboarding & Reporting
-
-Developed a Power BI dashboard with:
-
-KPIs: Total Sales, Gross Profit, Unsold Capital.
-
-Donut/Parito Charts: Purchase Contribution by Vendor.
-
-Funnel charts: Low-turnover vendors.
-
-Scatter plots: Target brands for sales promotion.
-
-DAX Calculations: Implemented advanced measures and calculated tables within Power BI.
-
-Compiled a final report with methodology, visualizations, and actionable insights for business strategy and cost optimization.
-
-Key Achievements & Outcomes
-
-Designed a full ETL pipeline capable of handling multi-million row datasets.
-
-Created a fast, optimized aggregated dataset to streamline analysis.
-
-Built an interactive dashboard enabling stakeholders to explore vendor performance dynamically.
-
-Provided data-driven recommendations for inventory and pricing strategies, improving operational decision-making.
